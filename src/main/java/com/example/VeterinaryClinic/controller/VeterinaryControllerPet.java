@@ -1,11 +1,9 @@
 package com.example.VeterinaryClinic.controller;
 
 import com.example.VeterinaryClinic.service.VeterinaryServicePet;
-import org.springframework.web.bind.annotation.RestController;
 import com.example.VeterinaryClinic.model.Pet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 
 @RestController
 @RequestMapping("/")
@@ -20,4 +18,10 @@ public class VeterinaryControllerPet {
     public Pet createPet(@RequestBody Pet newPet) {
         return veterinaryServicePet.createPet(newPet);
     }
+
+    @DeleteMapping(path = "/pet/{id}")
+    public void deletepet(@PathVariable("id") Long id) {
+        veterinaryServicePet.deletePet(id);
+    }
+
 }

@@ -15,4 +15,14 @@ public class VeterinaryServicePet {
         iVeterinaryRepositoryPet.save(newPet);
         return newPet;
     }
+
+    public Boolean deletePet(Pet deletePet){
+        iVeterinaryRepositoryPet.delete(deletePet);
+
+        if (iVeterinaryRepositoryPet.deleteById(id)) {
+            return true;
+        }
+        return false;
+    }
+
 }

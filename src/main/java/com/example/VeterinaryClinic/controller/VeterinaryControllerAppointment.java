@@ -18,4 +18,9 @@ public class VeterinaryControllerAppointment {
     public Appointment createAppointment(@RequestBody Appointment newAppointment) {
         return veterinaryServiceAppointment.createAppointment(newAppointment);
     }
+
+    @DeleteMapping(path = "/Appointment/{id}")
+    public Long deleteAppointment(@PathVariable("id") Long id) {
+        return veterinaryServiceAppointment.deleteAppointment(id);
+    }
 }

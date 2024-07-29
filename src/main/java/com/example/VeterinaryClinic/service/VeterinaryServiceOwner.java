@@ -11,8 +11,15 @@ public class VeterinaryServiceOwner {
     @Autowired
     IVeterinaryRepositoryOwner iVeterinaryRepositoryOwner;
 
-    public Owner createOwner(Owner newOwner){
+    public Owner createOwner(Owner newOwner) {
         iVeterinaryRepositoryOwner.save(newOwner);
         return newOwner;
     }
+
+    
+    public void deleteOwner(Long id) {
+        iVeterinaryRepositoryOwner.deleteById(id);
+
+}
+
 }

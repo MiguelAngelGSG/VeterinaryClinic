@@ -11,8 +11,13 @@ public class VeterinaryServiceAppointment {
     @Autowired
     IVeterinaryRepositoryAppointment iVeterinaryRepositoryAppointment;
 
-    public Appointment createAppointment(Appointment newAppointment){
+    public Appointment createAppointment(Appointment newAppointment) {
         iVeterinaryRepositoryAppointment.save(newAppointment);
         return newAppointment;
+    }
+
+    public Long deleteAppointment(Long deleteAppointmentId){
+        iVeterinaryRepositoryAppointment.deleteById(deleteAppointmentId);
+        return deleteAppointmentId;
     }
 }
