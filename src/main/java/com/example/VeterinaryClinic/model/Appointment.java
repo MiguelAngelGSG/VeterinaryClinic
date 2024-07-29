@@ -32,7 +32,7 @@ public class Appointment {
     @Column(name = "status")
     private String status;
 
-    @OneToOne
-    @JoinColumn(name = "pet_id", nullable = false)
-    private Pet pet;
+//    @OneToOne
+//    @JoinColumn(name = "pet_id", nullable = false)
+//    private Pet pet;
 }
