@@ -16,13 +16,15 @@ public class VeterinaryServicePet {
         return newPet;
     }
 
-    public Boolean deletePet(Pet deletePet){
-        iVeterinaryRepositoryPet.delete(deletePet);
-
-        if (iVeterinaryRepositoryPet.deleteById(id)) {
-            return true;
-        }
-        return false;
+    public String deletePet(Long id){
+        try{
+            iVeterinaryRepositoryPet.deleteById(id);
+            return "Delete Pet";
+        }catch (Exception error){
+        return "Error to delete Pet";
+    }
+    
+            
     }
 
 }

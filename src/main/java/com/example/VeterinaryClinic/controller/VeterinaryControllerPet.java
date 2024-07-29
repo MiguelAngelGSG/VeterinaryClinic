@@ -20,7 +20,7 @@ public class VeterinaryControllerPet {
     }
 
     @DeleteMapping(path = "/pet/{id}")
-    public void deletepet(@PathVariable("id") Long id) {
+    public void deletePet(@PathVariable("id") Long id) {
         veterinaryServicePet.deletePet(id);
     }
 
