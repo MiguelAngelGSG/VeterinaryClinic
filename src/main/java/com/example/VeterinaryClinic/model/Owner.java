@@ -29,6 +29,6 @@ public class Owner {
     @Column(name = "email")
     private String email;
 
-//    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private Set<Pet> pets = new HashSet<>();
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Pet> pets = new HashSet<>();
 }

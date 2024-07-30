@@ -29,10 +29,10 @@ public class Pet {
     @Column(name = "gender")
     private String gender;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "owner_id", nullable = false)
-//    private Owner owner;
-//
-//    @OneToOne(mappedBy = "pet", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    private Appointment appointment;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "owner_id", nullable = false)
+    private Owner owner;
+
+    @OneToOne(mappedBy = "pet", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Appointment appointment;
 }
