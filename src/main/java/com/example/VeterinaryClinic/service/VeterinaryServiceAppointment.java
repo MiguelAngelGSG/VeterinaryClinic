@@ -1,6 +1,7 @@
 package com.example.VeterinaryClinic.service;
 
 import com.example.VeterinaryClinic.model.Appointment;
+import com.example.VeterinaryClinic.model.Pet;
 import com.example.VeterinaryClinic.repositories.IVeterinaryRepositoryAppointment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,5 +15,9 @@ public class VeterinaryServiceAppointment {
     public Appointment createAppointment(Appointment newAppointment){
         iVeterinaryRepositoryAppointment.save(newAppointment);
         return newAppointment;
+    }
+    public void updateAppointment(Long id, Appointment newAppointment) {
+        newAppointment.setId(id);
+        iVeterinaryRepositoryAppointment.save(newAppointment);
     }
 }

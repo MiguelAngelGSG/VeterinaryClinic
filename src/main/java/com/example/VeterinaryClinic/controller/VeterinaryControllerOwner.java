@@ -19,4 +19,10 @@ public class VeterinaryControllerOwner {
     public Owner createOwner(@RequestBody Owner newOwner) {
         return veterinaryServiceOwner.createOwner(newOwner);
     }
+
+    @PutMapping(path = "/owner/{id}")
+    public void updateOwner(@RequestBody Owner owner,
+    @PathVariable Long id) {
+        veterinaryServiceOwner.updateOwner(id, owner);
+    }
 }

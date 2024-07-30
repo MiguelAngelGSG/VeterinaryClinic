@@ -15,4 +15,8 @@ public class VeterinaryServicePet {
         iVeterinaryRepositoryPet.save(newPet);
         return newPet;
     }
+    public void updatePet(Long id, Pet newPet) {
+        newPet.setId(id);
+        iVeterinaryRepositoryPet.save(newPet);
+    }
 }
