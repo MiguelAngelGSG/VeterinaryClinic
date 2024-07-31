@@ -19,7 +19,7 @@ public class VeterinaryControllerOwner {
     return veterinaryServiceOwner.createOwner(newOwner);
   }
 
-  @DeleteMapping(path = "/delete/{id}")
+  @DeleteMapping(path = "/owner/{id}")
   public void deleteOwner(@PathVariable Long id) {
     veterinaryServiceOwner.deleteOwner(id);
   }

@@ -16,8 +16,8 @@ public class VeterinaryServiceAppointment {
         return newAppointment;
     }
 
-    public Long deleteAppointment(Long deleteAppointmentId){
-        iVeterinaryRepositoryAppointment.deleteById(deleteAppointmentId);
-        return deleteAppointmentId;
+    public void deleteAppointment(Long id){
+        iVeterinaryRepositoryAppointment.deleteById(id);
+        
     }
 }

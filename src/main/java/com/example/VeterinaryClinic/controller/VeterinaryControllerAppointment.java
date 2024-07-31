@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/")
 @CrossOrigin(origins = "*")
 
 public class VeterinaryControllerAppointment {
@@ -14,13 +14,13 @@ public class VeterinaryControllerAppointment {
     @Autowired
     VeterinaryServiceAppointment veterinaryServiceAppointment;
 
-    @PostMapping(path = "/api/appointment")
+    @PostMapping(path = "/appointment")
     public Appointment createAppointment(@RequestBody Appointment newAppointment) {
         return veterinaryServiceAppointment.createAppointment(newAppointment);
     }
 
-    @DeleteMapping(path = "/Appointment/{id}")
-    public Long deleteAppointment(@PathVariable("id") Long id) {
-        return veterinaryServiceAppointment.deleteAppointment(id);
+    @DeleteMapping(path = "/appointment/{id}")
+    public void deleteAppointment(@PathVariable("id") Long id) {
+        veterinaryServiceAppointment.deleteAppointment(id);
     }
 }
