@@ -24,5 +24,4 @@ public class VeterinaryControllerAppointment {
     @PathVariable Long id) {
         veterinaryServiceAppointment.updateAppointment(id, appointment);
     }
-
 }
