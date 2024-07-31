@@ -31,7 +31,7 @@ public class VeterinaryServiceOwnerTest {
         when(iVeterinaryRepositoryOwner.save(newOwner)).thenReturn(newOwner);
 
         // Act
-        Owner result = VeterinaryServiceOwner.createOwner(newOwner);
+        Owner result = veterinaryServiceOwner.createOwner(newOwner);
 
         // Assert
         assertNotNull(result);
