@@ -1,7 +1,6 @@
 package com.example.VeterinaryClinic.controller;
 
 import com.example.VeterinaryClinic.service.VeterinaryServicePet;
-import com.example.VeterinaryClinic.model.Owner;
 import com.example.VeterinaryClinic.model.Pet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

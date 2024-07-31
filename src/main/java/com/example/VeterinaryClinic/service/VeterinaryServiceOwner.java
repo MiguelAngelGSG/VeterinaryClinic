@@ -1,6 +1,5 @@
 package com.example.VeterinaryClinic.service;
 
-import com.example.VeterinaryClinic.model.Appointment;
 import com.example.VeterinaryClinic.model.Owner;
 import com.example.VeterinaryClinic.repositories.IVeterinaryRepositoryOwner;
 import org.springframework.beans.factory.annotation.Autowired;
