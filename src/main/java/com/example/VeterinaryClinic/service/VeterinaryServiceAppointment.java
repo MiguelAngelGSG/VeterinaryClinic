@@ -20,7 +20,6 @@ public class VeterinaryServiceAppointment {
 
 
 
-
     public List<Appointment> getAlLAppointments() {
         return (List<Appointment>) iVeterinaryRepositoryAppointment.findAll();
     }
