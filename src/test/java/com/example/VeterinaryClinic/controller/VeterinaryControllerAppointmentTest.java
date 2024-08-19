@@ -2,6 +2,7 @@ package com.example.VeterinaryClinic.controller;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -65,7 +66,7 @@ class VeterinaryControllerAppointmentTest {
         when(veterinaryServiceAppointment.createAppointment(any(Appointment.class))).thenReturn(newAppointment);
 
         // Act & Assert
-        mockMvc.perform(post("/api/appointment")
+        mockMvc.perform(post("/appointment")
                         .contentType("application/json")
                         .content(new ObjectMapper().writeValueAsString(newAppointment)))
                 .andExpect(status().isOk())
@@ -90,8 +91,7 @@ class VeterinaryControllerAppointmentTest {
     
     //Act & Assert
 
-    mockMvc.perform(delete("/appointments/{id}", appointmentId)) .andExpect(status().isNoContent()); 
-    verify(veterinaryServiceAppointment, times(1)).deleteAppointment(appointmentId); 
-
+    mockMvc.perform(delete("/appointment/{id}", appointmentId)) .andExpect(status().isNoContent());
+    verify(veterinaryServiceAppointment, times(1)).deleteAppointment(appointmentId);
    }
 }

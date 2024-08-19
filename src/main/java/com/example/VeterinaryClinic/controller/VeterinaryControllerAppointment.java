@@ -3,6 +3,7 @@ package com.example.VeterinaryClinic.controller;
 import com.example.VeterinaryClinic.model.Appointment;
 import com.example.VeterinaryClinic.service.VeterinaryServiceAppointment;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,7 +21,8 @@ public class VeterinaryControllerAppointment {
     }
 
     @DeleteMapping(path = "/appointment/{id}")
-    public void deleteAppointment(@PathVariable("id") Long id) {
+    public ResponseEntity<Void> deleteAppointment(@PathVariable("id") Long id) {
         veterinaryServiceAppointment.deleteAppointment(id);
+        return ResponseEntity.noContent().build();
     }
 }

@@ -50,7 +50,7 @@ public class VeterinaryServiceAppointmentTest {
 
         // Act
 
-        veterinaryServiceAppointment.delete(appointmentId);
+        veterinaryServiceAppointment.deleteAppointment(appointmentId);
 
         // Assert
 
