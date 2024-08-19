@@ -58,4 +58,21 @@ class VeterinaryControllerPetTest {
 
         verify(veterinaryServicePet, times(1)).createPet(any(Pet.class));
     }
+
+
+@Test
+void testDeletePet() throws Exception {
+    // Arrange
+    Long petId = 1L;
+
+    // Mock the service to do nothing when deletePet is called
+    doNothing().when(veterinaryServicePet).deletePet(petId);
+
+    // Act & Assert
+    mockMvc.perform(delete("/pet/{id}", petId))
+           .andExpect(status().isOk());  // Or .andExpect(status().isNoContent());
+
+    // Verify that the service's deletePet method was called once
+    verify(veterinaryServicePet, times(1)).deletePet(petId);
+}
 }

@@ -55,4 +55,21 @@ class VeterinaryControllerOwnerTest {
 
         verify(veterinaryServiceOwner, times(1)).createOwner(any(Owner.class));
     }
+
+
+@Test
+    void testDeleteOwner() throws Exception {
+        // Arrange
+        Long ownerId = 1L;
+
+        // Mock the service to do nothing when deleteOwner is called
+        doNothing().when(veterinaryServiceOwner).deleteOwner(ownerId);
+
+        // Act & Assert
+        mockMvc.perform(delete("/owner/{id}", ownerId))
+               .andExpect(status().isOk());  // Or .andExpect(status().isNoContent());
+
+        // Verify that the service's deleteOwner method was called once
+        verify(veterinaryServiceOwner, times(1)).deleteOwner(ownerId);
+    }
 }

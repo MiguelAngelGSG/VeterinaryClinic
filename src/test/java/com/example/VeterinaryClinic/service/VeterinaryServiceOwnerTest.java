@@ -38,4 +38,20 @@ public class VeterinaryServiceOwnerTest {
         assertEquals(newOwner, result);
         verify(iVeterinaryRepositoryOwner, times(1)).save(any(Owner.class));
      }
+
+
+     @Test
+        void test_if_owner_is_deleted(){
+        // Arrange
+        Owner newOwner = new Owner();
+        when(iVeterinaryRepositoryOwner.save(newOwner)).thenReturn(newOwner);
+
+        // Act
+        Owner result = veterinaryServiceOwner.createOwner(newOwner);
+
+        // Assert
+        assertNotNull(result);
+        assertEquals(newOwner, result);
+        verify(iVeterinaryRepositoryOwner, times(1)).save(any(Owner.class));
+     }
 }

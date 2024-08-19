@@ -41,4 +41,19 @@ public class VeterinaryServiceAppointmentTest {
         assertEquals(newAppointment, result);
         verify(iVeterinaryRepositoryAppointment, times(1)).save(any(Appointment.class));
     }
+
+    @Test
+    void test_if_appointment_entry_is_deleted_by_id() {
+        // Arrange
+
+        Long appointmentId = 1L;
+
+        // Act
+
+        veterinaryServiceAppointment.delete(appointmentId);
+
+        // Assert
+
+        verify(iVeterinaryRepositoryAppointment, times(1)).deleteById(appointmentId);
+    }
 }
