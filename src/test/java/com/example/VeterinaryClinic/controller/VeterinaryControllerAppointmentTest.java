@@ -14,6 +14,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 class VeterinaryControllerAppointmentTest {
 
@@ -55,8 +56,8 @@ class VeterinaryControllerAppointmentTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json"))
                 .andExpect(jsonPath("$.id").value(1L))
-                .andExpect(jsonPath("$.dateTime").value("2024-07-31T10:00:00"))
-                .andExpect(jsonPath("$.name").value("John Doe"))
+                .andExpect(jsonPath("$.dateTime").value("05/08/2024 12:00"))
+                .andExpect(jsonPath("$.name").value("Lorca"))
                 .andExpect(jsonPath("$.consultationType").value("General Check-up"))
                 .andExpect(jsonPath("$.reason").value("Routine visit"))
                 .andExpect(jsonPath("$.status").value("Scheduled"))
