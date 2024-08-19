@@ -18,6 +18,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 class VeterinaryControllerOwnerTest {
 
     private MockMvc mockMvc;
+    private Owner newOwner;
 
     @Mock
     private VeterinaryServiceOwner veterinaryServiceOwner;
@@ -29,17 +30,18 @@ class VeterinaryControllerOwnerTest {
     void setUp() {
         MockitoAnnotations.openMocks(this);
         mockMvc = MockMvcBuilders.standaloneSetup(veterinaryControllerOwner).build();
+
+        // Initialize the owner object here
+        newOwner = new Owner();
+        newOwner.setId(1L);
+        newOwner.setName("Miguel");
+        newOwner.setPhone("+34 1234567890");
+        newOwner.setEmail("example@example.com");
     }
 
     @Test
     void testCreateOwner() throws Exception {
         // Arrange
-        Owner newOwner = new Owner();
-        newOwner.setId(1L);
-        newOwner.setName("Miguel");
-        newOwner.setPhone("+34 1234567890");
-        newOwner.setEmail("example@example.com");
-
         when(veterinaryServiceOwner.createOwner(any(Owner.class))).thenReturn(newOwner);
 
         // Act & Assert
@@ -52,6 +54,31 @@ class VeterinaryControllerOwnerTest {
                 .andExpect(jsonPath("$.name").value("Miguel"))
                 .andExpect(jsonPath("$.phone").value("+34 1234567890"))
                 .andExpect(jsonPath("$.email").value("example@example.com"));
+
+        verify(veterinaryServiceOwner, times(1)).createOwner(any(Owner.class));
+    }
+
+    @Test
+    void testCreateOwnerWithDifferentDetails() throws Exception {
+        // Arrange
+        // Modify the owner details for this test
+        newOwner.setId(2L);
+        newOwner.setName("Isabel");
+        newOwner.setPhone("+34 0987654321");
+        newOwner.setEmail("testing@example.com");
+
+        when(veterinaryServiceOwner.createOwner(any(Owner.class))).thenReturn(newOwner);
+
+        // Act & Assert
+        mockMvc.perform(post("/owner")
+                        .contentType("application/json")
+                        .content(new ObjectMapper().writeValueAsString(newOwner)))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType("application/json"))
+                .andExpect(jsonPath("$.id").value(2L))
+                .andExpect(jsonPath("$.name").value("Isabel"))
+                .andExpect(jsonPath("$.phone").value("+34 0987654321"))
+                .andExpect(jsonPath("$.email").value("testing@example.com"));
 
         verify(veterinaryServiceOwner, times(1)).createOwner(any(Owner.class));
     }
