@@ -31,14 +31,14 @@ public class VeterinaryServiceAppointmentTest {
         appointmentList = new ArrayList<>();
 
         Appointment appointment1 = new Appointment();
-        appointment1.setName("Diego Doe");
+        appointment1.setName("Bolita");
         appointment1.setConsultationType("Normal");
         appointment1.setReason("hair cut");
         appointment1.setStatus("on date");
         appointment1.setDateTime("07-30-2024");
 
         Appointment appointment2 = new Appointment();
-        appointment2.setName("Maria Doe");
+        appointment2.setName("Jack");
         appointment2.setConsultationType("Urgent");
         appointment2.setReason("fever");
         appointment2.setStatus("on date");
