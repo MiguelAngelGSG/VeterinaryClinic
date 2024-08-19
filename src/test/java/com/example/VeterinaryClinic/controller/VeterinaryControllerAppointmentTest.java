@@ -51,7 +51,7 @@ class VeterinaryControllerAppointmentTest {
         anotherAppointment = new Appointment();
         anotherAppointment.setId(2L);
         anotherAppointment.setDateTime("06/09/2024 14:30");
-        anotherAppointment.setName("Bella");
+        anotherAppointment.setName("Duque");
         anotherAppointment.setConsultationType("Dental Cleaning");
         anotherAppointment.setReason("Teeth cleaning");
         anotherAppointment.setStatus("Scheduled");
