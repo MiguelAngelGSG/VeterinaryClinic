@@ -2,6 +2,9 @@ package com.example.VeterinaryClinic.service;
 
 import com.example.VeterinaryClinic.model.Owner;
 import com.example.VeterinaryClinic.repositories.IVeterinaryRepositoryOwner;
+
+import net.bytebuddy.description.modifier.Ownership;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -9,6 +12,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 public class VeterinaryServiceOwnerTest {
@@ -41,17 +45,17 @@ public class VeterinaryServiceOwnerTest {
 
 
      @Test
-        void test_if_owner_is_deleted(){
+        void test_if_Owner_is_deleted() {
         // Arrange
-        Owner newOwner = new Owner();
-        when(iVeterinaryRepositoryOwner.save(newOwner)).thenReturn(newOwner);
+
+        Long ownerId = 1L;
 
         // Act
-        Owner result = veterinaryServiceOwner.createOwner(newOwner);
+
+        veterinaryServiceOwner.deleteOwner(ownerId);
 
         // Assert
-        assertNotNull(result);
-        assertEquals(newOwner, result);
-        verify(iVeterinaryRepositoryOwner, times(1)).save(any(Owner.class));
+
+        verify(iVeterinaryRepositoryOwner, times(1)).deleteById(ownerId);
      }
 }

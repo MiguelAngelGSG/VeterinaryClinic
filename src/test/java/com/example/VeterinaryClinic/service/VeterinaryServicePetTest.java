@@ -40,4 +40,21 @@ public class VeterinaryServicePetTest {
         assertEquals(newPet, result);
         verify(iVeterinaryRepositoryPet, times(1)).save(any(Pet.class));
     }
+
+
+    @Test
+    void test_if_pet_is_deleted() {
+    // Arrange
+
+    Long petId = 1L;
+
+    // Act
+
+    veterinaryServicePet.deletePet(petId);
+
+    // Assert
+
+    verify(iVeterinaryRepositoryPet, times(1)).deleteById(petId);
+ }
+
 }
