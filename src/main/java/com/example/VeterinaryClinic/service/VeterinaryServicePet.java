@@ -12,8 +12,7 @@ public class VeterinaryServicePet {
     IVeterinaryRepositoryPet iVeterinaryRepositoryPet;
 
     public Pet createPet(Pet newPet){
-        iVeterinaryRepositoryPet.save(newPet);
-        return newPet;
+       return iVeterinaryRepositoryPet.save(newPet);
     }
     public void updatePet(Long id, Pet newPet) {
         newPet.setId(id);

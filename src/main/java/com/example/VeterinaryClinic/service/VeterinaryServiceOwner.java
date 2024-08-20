@@ -12,8 +12,7 @@ public class VeterinaryServiceOwner {
     IVeterinaryRepositoryOwner iVeterinaryRepositoryOwner;
 
     public Owner createOwner(Owner newOwner){
-        iVeterinaryRepositoryOwner.save(newOwner);
-        return newOwner;
+       return iVeterinaryRepositoryOwner.save(newOwner);
     }
     
      public void updateOwner(Long id, Owner newOwner) {
