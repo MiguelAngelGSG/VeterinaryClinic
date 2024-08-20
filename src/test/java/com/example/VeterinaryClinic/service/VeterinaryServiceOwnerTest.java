@@ -45,7 +45,7 @@ public class VeterinaryServiceOwnerTest {
      @Test
      void test_updateOwner() {
          long id = 1L;
-         Owner owner = new Owner();
+         Owner nweOwner = new Owner();
          Owner.setId();
          Owner.setName();
          Owner.setPhone();

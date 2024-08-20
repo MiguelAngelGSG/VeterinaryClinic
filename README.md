@@ -1,49 +1,50 @@
 # VeterinaryClinic
 
 
-## Contexto del Proyecto:
+## Context of the Project:
 
-Una clínica veterinaria nos pide la creación de un sistema de gestión de pacientes con  una API rest que almacene los datos en una base de datos MySQL, y pueda ser consumida desde ese front.
+A veterinary clinic asked us to create a patient management system with a rest API that stores data in a MySQL database, and can be consumed from that front end.
 
-## Marcos de competencias:
+## Competence frameworks:
 
-•	Gestión de proyecto con metodologías ágiles
-•	Desarrollar el backend de una aplicación web 
-•	Administrar bases de datos 
-•	Desarrollar y Ejecutar pruebas automatizadas
+•	Project management with agile methodologies
+•  Develop the backend of a web application 
+•  Manage databases 
+•  Develop and run automated tests
 
-## Descripción del Proyecto:
+## Project description:
 
-El objetivo de este proyecto es desarrollar un sistema de gestión de pacientes en Java que permita listar, agregar, editar y eliminar pacientes. También gestionar sus citas de manera eficiente.
+The aim of this project is to develop a patient management system in Java that allows listing, adding, editing and deleting patients. Also manage their appointments in an efficient way.
 
-## Requisitos funcionales del Proyecto:
+## Functional requirements of the project:
    
-- Listar, añadir, modificar y eliminar pacientes.
- Cada paciente deberá tener un perfil que incluya:
-     - nombre
-     - edad
-     - raza
-     - género
-     - número de identificación
-     - nombre y apellidos del tutor
-     - número de teléfono del tutor
+- List, add, modify and delete patients.
+ Each patient must have a profile that includes
+     - name
+     - age
+     - race
+     - gender
+     - identification number
+     - guardian's name and surname
+     - guardian's telephone number
 
-- Se deberá poder acceder a los datos de un paciente desde su número de identificación
-- La api deberá proporcionar los tratamientos efectuados a cada pacientes
-- Listar, añadir, modificar y eliminar citas.
-- Cada cita incluirá:
-   - Fecha y hora
-   - Paciente
-   - Consulta estándar / urgencia
-   - Motivo de la cita
-   - Estado de la cita Tecnologías Utilizadas
+- A patient's data shall be accessible from the patient's ID number.
+- The api shall provide the treatments carried out for each patient.
+- List, add, modify and delete appointments.
+- Each appointment shall include:
+   - Date and time
+   - Patient
+   - Standard consultation / emergency
+   - Reason for appointment
+   - Appointment Status Technologies Used
 
-## Herramientas y tecnologías utilizadas:
+## Tools and technologies used:
 
-•	 Visual Studio Code
-•	 Intellij IDEA
-•	 MySQL
-•	 Discord
+•	Visual Studio Code
+•	Intellij IDEA
+•	GitHub
+•	MySQL
+•	Discord
 •	Trello
 •	Xampp
 •	phpMyAdmin
