@@ -9,6 +9,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
@@ -41,4 +44,28 @@ public class VeterinaryServiceAppointmentTest {
         assertEquals(newAppointment, result);
         verify(iVeterinaryRepositoryAppointment, times(1)).save(any(Appointment.class));
     }
+
+
+    @Test
+    void test_get_all_appointments() {
+        // Arrange
+        Appointment appointment1 = new Appointment();
+        appointment1.setId(1L);
+        Appointment appointment2 = new Appointment();
+        appointment2.setId(2L);
+
+        List<Appointment> appointments = Arrays.asList(appointment1, appointment2);
+        when(iVeterinaryRepositoryAppointment.findAll()).thenReturn(appointments);
+
+        // Act
+        List<Appointment> result = veterinaryServiceAppointment.getAlLAppointments();
+
+        // Assert
+        assertNotNull(result);
+        assertEquals(2, result.size());
+        assertEquals(appointment1.getId(), result.get(0).getId());
+        assertEquals(appointment2.getId(), result.get(1).getId());
+        verify(iVeterinaryRepositoryAppointment, times(1)).findAll();
+    }
 }
+
